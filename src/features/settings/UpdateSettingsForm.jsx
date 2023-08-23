@@ -1,10 +1,10 @@
-import Spinner from 'ui/Spinner'
-import { useSettings } from 'features/settings/useSettings'
-import { useUpdateSetting } from 'features/settings/useUpdateSetting'
+import { useSettings } from './useSettings'
+import { useUpdateSetting } from './useUpdateSetting'
 
-import Form from 'ui/Form'
-import FormRow from 'ui/FormRow'
-import Input from 'ui/Input'
+import Form from '../../ui/Form'
+import FormRow from '../../ui/FormRow'
+import Input from '../../ui/Input'
+import Spinner from '../../ui/Spinner'
 
 function UpdateSettingsForm() {
   const {
