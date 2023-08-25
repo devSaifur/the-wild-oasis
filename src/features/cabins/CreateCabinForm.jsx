@@ -9,7 +9,7 @@ import FormRow from '../../ui/FormRow'
 import { useCreateCabin } from './useCreateCabin'
 import { useEditCabin } from './useEditCabin'
 
-function CreateCabinForm({ cabinToEdit = {} }) {
+function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { createCabin, isCreating } = useCreateCabin()
   const { editCabin, isEditing } = useEditCabin()
 
@@ -36,6 +36,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
         {
           onSuccess: () => {
             resetForm()
+            onCloseModal?.()
           },
         }
       )
@@ -53,8 +54,11 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const isWorking = isCreating || isEditing
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormRow label='cabin name' error={errors?.name?.message}>
+    <Form
+      type={onCloseModal ? 'modal' : 'regular'}
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <FormRow label='Cabin name' error={errors?.name?.message}>
         <Input
           disabled={isWorking}
           type='text'
@@ -138,7 +142,12 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button disabled={isWorking} variation='secondary' type='reset'>
+        <Button
+          onClick={() => onCloseModal?.()}
+          disabled={isWorking}
+          variation='secondary'
+          type='reset'
+        >
           Cancel
         </Button>
         <Button disabled={isWorking}>
