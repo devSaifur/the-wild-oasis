@@ -22,8 +22,7 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
     "recharts": "^2.8.0",
-    "styled-components": "^6.0.7",
-    "the-wild-oasis": "link:"
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
