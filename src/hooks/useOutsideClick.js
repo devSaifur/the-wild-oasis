@@ -22,4 +22,4 @@ function useOutsideClick(handler, listenCapturing = true) {
   return ref
 }
 
-export default useOutsideClick
+export { useOutsideClick }

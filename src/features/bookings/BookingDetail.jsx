@@ -16,6 +16,7 @@ import ButtonText from '../../ui/ButtonText'
 import Spinner from '../../ui/Spinner'
 import Modal from '../../ui/Modal'
 import ConfirmDelete from '../../ui/ConfirmDelete'
+import Empty from '../../ui/Empty'
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -31,8 +32,9 @@ function BookingDetail() {
   const { mutate: deleteBooking, isDeleting } = useDeleteBooking()
 
   if (isLoading || isCheckingOut || isDeleting) return <Spinner />
+  if (!booking) return <Empty resource='booking' />
 
-  const { status, id: bookingId } = booking || {}
+  const { status, id: bookingId } = booking
 
   const statusToTagName = {
     unconfirmed: 'blue',

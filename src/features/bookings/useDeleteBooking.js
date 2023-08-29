@@ -6,7 +6,7 @@ function useDeleteBooking() {
   const queryClient = useQueryClient()
 
   const { mutate, isLoading: isDeleting } = useMutation({
-    mutationFn: (bookingId) => deleteBooking(bookingId),
+    mutationFn: deleteBooking,
 
     onSuccess: () => {
       toast.success(`Booking successfully deleted`)

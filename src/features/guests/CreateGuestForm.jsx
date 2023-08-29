@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import styled from 'styled-components'
 
 import { useCountries } from 'hooks/useCountries'
 import { useCreateGuest } from 'features/guests/useCreateGuest'
@@ -8,7 +9,6 @@ import FormRow from 'ui/FormRow'
 import Input from 'ui/Input'
 import Select from 'ui/Select'
 import Button from 'ui/Button'
-import styled from 'styled-components'
 
 const FormSelect = styled(Select)`
   width: 100%;
@@ -31,7 +31,6 @@ function CreateGuestForm({ onSuccessNewGuest, closeModal }) {
       label: country.name,
     }
   })
-  console.log(countryOptions)
 
   const onSubmit = function (data) {
     const countryFlag = countries.find(
