@@ -9,6 +9,7 @@ export default {
     extend: {
       colors: {
         'gray-0': 'rgb(var(--color-gray-0) / <alpha-value>)',
+        'backdrop-primary': 'rgb(var(--backdrop-color) / <alpha-value>)',
       },
     },
   },
