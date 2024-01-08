@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply delay-300;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    @apply text-inherit;
+  }
+
+  select:disabled,
+  input:disabled {
+    @apply bg-gray-200;
+    @apply dark:bg-gray-700;
+    @apply text-gray-500;
+    @apply dark:text-gray-400;
+  }
+
+  input:focus,
+  button:focus,
+  textarea:focus,
+  select:focus {
+    @apply outline-2;
+    @apply outline-offset-[-1px];
+    @apply outline-indigo-600;
+    @apply border;
+    @apply border-solid;
+  }
+
+  a {
+    @apply text-inherit;
+    @apply no-underline;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply break-words;
+    @apply hyphens-auto;
+  }
+
+  img {
+    @apply grayscale-0;
+    @apply dark:grayscale-[10%];
+    @apply opacity-100;
+    @apply dark:opacity-90;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --color-grey-0: 255, 255, 255;
+      --backdrop-color: rgba(255, 255, 255, 0.1);
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-grey-0: 24, 33, 47;
+      --backdrop-color: rgba(0, 0, 0, 0.3);
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
+    }
+  }
+}
