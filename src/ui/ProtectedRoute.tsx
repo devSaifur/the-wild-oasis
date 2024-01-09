@@ -1,5 +1,13 @@
+import Spinner from './Spinner'
+
 const ProtectedRoute = () => {
-  return <div></div>
+  //logic todo
+
+  return (
+    <div className="flex h-screen items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <Spinner />
+    </div>
+  )
 }
 
 export default ProtectedRoute

@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 interface FormRowProps {
   error: string
   label: React.ReactNode

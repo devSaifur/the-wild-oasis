@@ -1,9 +1,8 @@
-import { ReactNode } from 'react'
 import { cn } from '../lib/utils'
 
 interface HeadingProps {
   as: 'h1' | 'h2' | 'h3' | 'h4'
-  children: ReactNode
+  children: React.ReactNode
   className?: string
 }
 

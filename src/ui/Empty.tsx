@@ -1,9 +1,13 @@
 interface EmptyProps {
-  resource: string
+  resource?: string
+  children?: React.ReactNode
 }
 
-const Empty = ({ resource }: EmptyProps) => {
-  return <p>No {resource} could be found.</p>
+const Empty = ({ resource, children }: EmptyProps) => {
+  const emptyWithChildren = <p>{children}</p>
+  const emptyWithoutChildren = <p>No {resource} could be found.</p>
+
+  return children ? emptyWithChildren : emptyWithoutChildren
 }
 
 export default Empty
